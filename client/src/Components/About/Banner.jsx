@@ -29,7 +29,7 @@ function Banner() {
                 >
 
                     <div><h2>About Us</h2></div>
-                     <p><q className='testingQuote'> Frank Body is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country </q></p>
+                     <p><q className='testingQuote'> Khoobsurat is a one stop shop for all your fashion and lifestyle needs. Being India's largest e-commerce store for fashion and lifestyle products, Myntra aims at providing a hassle free and enjoyable shopping experience to shoppers across the country with the widest range of brands and products on its portal. The brand is making a conscious effort to bring the power of fashion to shoppers with an array of the latest and trendiest products available in the country </q></p>
                 </m.div>
 
 
@@ -38,9 +38,8 @@ function Banner() {
 
             <div className="welcomeSection">
 
-                <h2>Welcome to #thefrankeffect.</h2>
-                <p>I don’t take myself too seriously but I’m serious about the right thing.
-That's why over 6 million babes have fallen in love with me.</p>
+                <h2>Welcome to #Khoobsurat.</h2>
+                <p>Beauty is inclusive and not limited to few people</p>
             </div>
 
             <div className="aboutMesection">
@@ -55,32 +54,7 @@ That simple, that good.</p>
                 </div>
             </div>
 
-            <div className="detail_about">
 
-               <div>
-                <img src={teddy} alt="Not found" />
-                <h3>CRUELTY FREE.</h3>
-                <p>My products are all naturally derived and cruelty-free, tested on babes not bunnies. Available on your demand.</p>
-               </div>
-
-
-
-
-
-               <div>
-                <img src={heart} alt="Not found" />
-                <h3>
-                VEGAN.
-                </h3>
-                <p>Most of my products are vegan too. Because living a vegan, cruelty-free life is about more than what you put in your body.</p>
-               </div>
-               <div>
-                <img src={oneMore} alt="Not Found" />
-                <h3>AUSTRALIAN MADE.</h3>
-                <p>It’s not my beaches that make Australia different. It’s how you feel on them: relaxed. My approach to beauty is the same.</p>
-               </div>
-
-            </div>
         </>
     );
 }
