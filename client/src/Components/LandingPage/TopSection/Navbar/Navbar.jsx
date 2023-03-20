@@ -31,10 +31,12 @@ function Navbar() {
                     <div className='navList'>
                             <ul>
                                 <li><NavLink to='/'>Home</NavLink></li>
-                                <li><NavLink to='/shop'>Shop</NavLink></li>
-                                <li><NavLink to='/blogs'>Blogs</NavLink></li>
                                 <li><NavLink to='/allergies'>Allergies</NavLink></li>
-                                <li className="res_m"><NavLink to='/about'>About</NavLink></li>
+
+                                <li><NavLink to='/shop'>Shop</NavLink></li>
+                                <li className="res_m"><a href='http://127.0.0.1:8080/#/'>BeautyAR</a></li>
+                                <li><NavLink to='/blogs'>Blogs</NavLink></li>
+
                             </ul>
                     </div>
                     <div className='navbar_icons'>

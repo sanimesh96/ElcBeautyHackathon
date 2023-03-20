@@ -11,7 +11,7 @@ function Blogs() {
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <a href = '/'>Makeup Blogs</a>
+                            <h2>Makeup Blogs</h2>
                             {/* <span class="subheading">A Blog Theme by Start Bootstrap</span> */}
                         </div>
                     </div>
