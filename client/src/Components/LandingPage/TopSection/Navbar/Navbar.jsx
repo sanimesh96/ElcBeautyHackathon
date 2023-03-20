@@ -33,6 +33,8 @@ function Navbar() {
                             <ul>
                                 <li><NavLink to='/'>Home</NavLink></li>
                                 <li><NavLink to='/shop'>Shop</NavLink></li>
+                                <li><NavLink to='/blogs'>Blogs</NavLink></li>
+                                <li><NavLink to='/allergies'>Allergies</NavLink></li>
                                 <li className="res_m"><NavLink to='/about'>About</NavLink></li>
                             </ul>
                     </div>

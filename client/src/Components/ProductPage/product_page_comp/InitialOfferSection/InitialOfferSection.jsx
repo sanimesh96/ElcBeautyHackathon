@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../shop.css'
 import heading from '../../../LandingPage/TopSection/img/checking.png';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +13,24 @@ import {setActiveCategory , setSortingOrder} from '../../../../ReduxStore/Action
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 function InitialOfferSection() {
+
+    useEffect(() => {
+        fetchAllergies()
+      }, [])
+      
+      const [allergies, setAllergies] = useState([])
+      const [oldAllergies, setOldAllergies] = useState([])
+      const fetchAllergies = async () => {
+          const response = await fetch("http://localhost:5001/api/auth/getAllAllergies", {
+            method: "GET",
+            headers: {
+              "auth-Token" : localStorage.getItem("token")
+            },
+          });
+          const json = await response.json();
+          console.log(json.user.allergies)
+          setOldAllergies(json.user.allergies)
+        };
 
     const [activecat , setActiveCat] = useState("All Products");
 
@@ -67,6 +85,7 @@ function InitialOfferSection() {
 
                                 <select onChange={handlesortChange}>
                                     <option value="sbp">-- Sort By Price --</option>
+                                    <option value="alr">Allergies</option>
                                     <option value="lth">Price Low to High</option>
                                     <option value="htl">Price High to Low</option>
                                 </select>

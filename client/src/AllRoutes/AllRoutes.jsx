@@ -14,6 +14,8 @@ import Payment2 from '../Components/PaymentPage/Payment2';
 import PaymentDialouge from '../Components/PaymentPage/PaymentDialouge';
 import EmptyCart from '../Components/CartPage/EmptyCart/EmptyCart';
 import Cart from '../Components/CartPage/Cart/Cart';
+import Blogs from '../Components/Blogs/Blogs'
+import Allergies from '../Components/Allergies/Allergies';
 
 function AllRoutes() {
 
@@ -32,6 +34,8 @@ function AllRoutes() {
                         <Route path='/' element={<LandingPage />} />
                         <Route path='/shop' element={<ProductPage />} />
                         <Route path='/about' element={<About />} />
+                        <Route path='/blogs' element={<Blogs />} />
+                        <Route path='/allergies' element={<Allergies />} />
                         <Route path ='/Login' element={<Login />} />
                         <Route path='/details/:id' element={<ProductDescription />} />
                         <Route path='/profile' element={isLogin ? <Profile /> : <Navigate to='/Login' />} />
