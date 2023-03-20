@@ -204,11 +204,11 @@ router.get("/getAllInstitutions", fetchUser, async(req,res) => {
   }
 })
 
-router.get("/getRegisteredAlumni/:id", fetchUser, async(req,res) => {
+router.get("/getAllAllergies", fetchUser, async(req,res) => {
   try{
-    let id = req.params.id
-    let alumniDetails = await User.find({_id : id, role: "Institution"}).populate(['registeredAlumni'])
-    res.status(200).send(alumniDetails)
+    let user = await User.findById(req.user.id)
+    console.log(user)
+    res.status(200).json({user})
 
   }catch(error){
     console.log(error.message);
@@ -216,53 +216,29 @@ router.get("/getRegisteredAlumni/:id", fetchUser, async(req,res) => {
   }
 })
 
+router.post('/updateAllergies', fetchUser, async(req,res) => {
+  try{
+    console.log(req.body.allergies)
+    let details = await User.updateOne({_id: req.user.id}, {
+      $set : {
+        allergies : req.body.allergies
+      }
+    })
+    // const user = await User.findById(req.user.id);
+    // const { allergies } = req.body;
 
-// //instiSingup
-// router.post("/signupInsti", async (req, res) => {
-//   let success = false;
-//   try {
+    // const newObj = {
+    //   "allergies": allergies,
+    // };
+    
+    // await user.allergies.push(newObj);
+    // const savedAllergies = await user.save();
+    res.status(200).json({details})
 
-//     console.log(req.body)
-
-//     //check whteher user with this email exists
-//     let institution = await Institution.findOne({ email: req.body.email });
-//     if (institution) {
-//       return res.status(400).send({
-//         success,
-//         error: "Please give unique email value,  as email already registered",
-//       });
-//     }
-//     //hash password
-
-//     var salt = await bcrypt.genSalt(10);
-//     console.log(req.body.password);
-//     var secPass = await bcrypt.hash(req.body.password, salt);
-//     //if no user exists, then create new user
-
-//     instiDetails = await Institution.create({
-//       name: req.body.name,
-//       email: req.body.email,
-//       password: secPass,
-//       img: req.body.img,
-//       instiType: req.body.instiType,
-//       address : req.body.address,
-//       pinCode : req.body.pincode
-//     });
-//     const data = {
-//       session: {
-//         id: instiDetails.id,
-//       },
-//     };
-//     const authToken = jwt.sign(data, JWT_SECRET);
-//     success = true;
-//     res.json({ success, authToken, instiDetails });
-//   } catch (error) {
-//     console.log(error);
-//     res.status(500).send({
-//       success,
-//       error: error.message,
-//     });
-//   }
-// });
+  }catch(error){
+    console.log(error.message);
+    res.status(500).send("Oops internal server error occured");
+  }
+})
 
 module.exports = router;

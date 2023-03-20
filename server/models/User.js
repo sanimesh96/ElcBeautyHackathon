@@ -17,6 +17,9 @@ const UserSchema = new Schema({
   phoneNumber : {
     type : String
   },
+  allergies : [{
+    type : String
+  }]
 });
 const User = new mongoose.model("user", UserSchema);
 // User.createIndexes();
