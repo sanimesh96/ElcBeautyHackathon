@@ -26,8 +26,7 @@ function Navbar() {
         <>
                 <div className="navbar_outer">
                     <div className='logodiv'>
-                        <img src={logo} alt="Not found" onClick={logoClick}  className="logo"
-                        />
+                        <h4><a href='/' style={{textDecoration: "none", color: "#e8e8e8"}}>KhoobSurat</a></h4>
                     </div>
                     <div className='navList'>
                             <ul>
