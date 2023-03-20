@@ -9,8 +9,6 @@ export let Footer = () => {
           <h3>
             SIGN UP TO MY BABE MAIL FOR 15% <br></br>OFF YOUR FIRST ORDER.
           </h3>
-          <button>SIGN ME UP</button>
-          {/* <hr className="seprator_line"></hr> */}
         </div>
         <div id="footer-top-right">
           <h3>Connect With Us</h3>
@@ -77,87 +75,6 @@ export let Footer = () => {
             </div>
           </div>
           {/* <hr className="seprator_line"></hr> */}
-        </div>
-      </div>
-      <div id="foooter-bottom">
-        <div className="footer_Bottom_Container">
-        <div id="foooter-bottom-1">
-        <hr className="seprator_line"></hr>
-            <h3 className="footer_heading">Help</h3>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points">Contact Us</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points">Track Your Order</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points">FAQ's</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points">Delivery Information</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points">Refunds & Returns</div>
-                </a>
-        </div>
-        <div id="foooter-bottom-2">
-        <hr className="seprator_line"></hr>
-            <h3 className="footer_heading">Want More?</h3>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">About Us</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Refer a Friend</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Foundation's of Frank</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Hotel Pink</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Blog</div>
-                </a>
-        </div>
-        <div id="foooter-bottom-3">
-        <hr className="seprator_line"></hr>
-            <h3 className="footer_heading">T&C</h3>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Cookies Policy</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Privacy Policy</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">T&c</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Klarna</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Splitit</div>
-                </a>
-        </div>
-        <div id="foooter-bottom-4">
-        <hr className="seprator_line"></hr>
-            <h3 className="footer_heading">International</h3>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Australia</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Canada</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">Rest of World</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">UK</div>
-                </a>
-                <a href="" class="bottom-display-points-link">
-                    <div class="bottom-display-points-right">USA</div>
-                </a>
-        </div>
-        
         </div>
       </div>
     </div>

@@ -13,112 +13,34 @@ import {toast as tt} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-
-
-const logindatainital  = {
-    email:"",
-    password:"",
-}
-let localStoragearr = JSON.parse(localStorage.getItem('RegisterItems')) || [];
-
-
-
-
-
 function Login() {
 
-    const dispatch = useDispatch();
+    let navigate = useNavigate();
+  const [credentials, setcredentials] = useState({ email: "", password: "" });
 
+  const onChange = (e) => {
+    setcredentials({ ...credentials, [e.target.name]: e.target.value });
+  };
 
-
-
-
-    const navigate = useNavigate();
-  
-    const [logindata,setlogindata] = useState(logindatainital);
-    const [loginstatus,setloginstatus] = useState(false);
-    localStorage.setItem("Login_Status",loginstatus);
-    
-    const logindataHandler = (e) => {
-      const {name,value} = e.target;
-      setlogindata({...logindata,[name]:value});
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("http://localhost:5000/api/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: credentials.email,
+        password: credentials.password,
+      }),
+    });
+    const json = await response.json();
+    if (json.success) {
+      localStorage.setItem("token", json.authToken);
+      localStorage.setItem("email", json.user.email);
+      navigate("/");
     }
-
-    const {email,password} = logindata;
-
-    // function handleLogin(){
-        
-
-        const loginsubmitter = (e) => {
-
-            let localStoragearr2 = JSON.parse(localStorage.getItem('RegisterItems')) || [];
-
-
-            e.preventDefault();
-            if(localStoragearr2.length>0)
-            {
-                localStoragearr2.map((elem)=>{
-                    if(elem.email === logindata.email && elem.password === logindata.password)
-                    {
-                        setloginstatus(true);
-                        // console.log(loginstatus);
-                        localStorage.setItem("Login_Status",true);
-                        SetLogin(dispatch , true);
-                        toast.success('Login Success', {
-                            position: "top-center",
-                            autoClose: 5000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: false,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "light",
-                            });
-                        setTimeout(()=>{
-                            navigate('/')
-                        },1000)
-                        
-                        // return <Navigate to="/register" />
-                    }
-                return 1;
-                })
-            }
-            else{
-                toast.error('Register To login', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    });
-              
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  };
 
     return (
         <>
@@ -142,9 +64,9 @@ function Login() {
         <div >
             <h2 className='login_h2'>Sign in to your account</h2>
         </div>
-        <form  onSubmit={loginsubmitter} className='loginform'>
-        <input type="email" name="email" value={email} placeholder="Email"  onChange={logindataHandler} required/>
-            <input type="password" name="password" value={password} placeholder="Password" onChange={logindataHandler} required/>
+        <form  onSubmit={handleSubmit} className='loginform'>
+        <input type="email" name="email" value={credentials.email} placeholder="Email"  onChange={onChange} required/>
+            <input type="password" name="password" value={credentials.password} placeholder="Password" onChange={onChange} required/>
             <input type="submit" value="SIGN IN" />
         </form>
         <div className='loginlinks'>

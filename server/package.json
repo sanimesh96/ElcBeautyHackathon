@@ -1,27 +1,28 @@
 {
-  "name": "server",
+  "name": "inotebook-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "Cloud Notebook",
+  "main": "index.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Karan Agrawal",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Karan9034/shoplift.git"
-  },
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^9.0.1",
-    "express": "^4.17.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.7"
+    "mongodb": "^4.3.0",
+    "mongoose": "^6.1.5",
+    "multer": "^1.4.4",
+    "razorpay": "^2.8.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.15"
   }
 }
